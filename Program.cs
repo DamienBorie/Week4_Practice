@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Data.SqlTypes;
 using System.Linq;
@@ -18,7 +19,10 @@ namespace Week4_Practice
             //Question3();
             //Question4();
             //Question5();
-            Question6();
+            //Question6();
+            //Question7();
+            //Question8();
+            Question9();
             Console.ReadKey();
         }
         public static void Question1()
@@ -186,5 +190,39 @@ namespace Week4_Practice
             foreach (KeyValuePair<int, int> keyValuePair in occur)
                 Console.WriteLine(keyValuePair + " ; ");
         }
+        public static void Question7()
+        {
+            Console.WriteLine("Enter a number");
+            int nb = Convert.ToInt32(Console.ReadLine());
+            int sum = 1;
+
+            for (int i = 1; i <= nb; i++)
+                sum *= i;
+
+            Console.WriteLine("The factorial is : " + sum);
+        }
+        public static void Question8()
+        {
+            Console.WriteLine("Enter a sentence");
+            string sentence = Console.ReadLine();
+            int cmp = 0;
+            for(int i = 0; i < sentence.Length;i++)
+            {
+                if (sentence[i] == ' ')
+                    cmp++;
+            }
+            Console.WriteLine("There are " + cmp + " spaces in the sentence");
+        }
+        public static void Question9()
+        {
+            Console.WriteLine("Enter 3 names");
+            string n1 = Console.ReadLine();
+            string n2 = Console.ReadLine();
+            string n3 = Console.ReadLine();
+            Person[] list = { new Person(n1), new Person(n2), new Person(n3) };
+            foreach (Person p in list)
+                Console.WriteLine(p.ToString());
+        }
+
     }
 }
